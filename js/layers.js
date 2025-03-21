@@ -15,6 +15,7 @@ addLayer("b", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (hasUpgrade('b', 14)) mult = mult.times(upgradeEffect('b', 14))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -44,6 +45,14 @@ addLayer("b", {
             title: "Baby Talon Links say E",
             description: "1.5x T.M. Point gain.",
             cost: new Decimal(7)
+        },
+        14: {
+            title: "Baby Talon Links are pets",
+            description: "Boost Baby Talon Link gain based on T.M. Points.",
+            cost: new Decimal(12),
+            effect() {
+                return player.points.add(1).pow(0.15)
+            }
         }
     }
 })
