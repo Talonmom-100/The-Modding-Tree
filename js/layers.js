@@ -39,6 +39,11 @@ addLayer("b", {
                 return player[this.layer].points.add(1).pow(0.5)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" } // Add formatting to the effect
+        },
+        13: {
+            title: "Baby Talon Links say E",
+            description: "1.5x T.M. Point gain.",
+            cost: new Decimal(7)
         }
     }
 })
