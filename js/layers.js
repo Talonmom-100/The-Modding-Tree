@@ -30,6 +30,15 @@ addLayer("b", {
             title: "The Start",
             description: "Double T.M. Point gain.",
             cost: new Decimal(1)
+        },
+        12: {
+            title: "Baby Talon Links are Kirbys",
+            description: "Boost T.M. Points based on Baby Talon Links.",
+            cost: new Decimal(3),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.5)
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         }
     }
 })
