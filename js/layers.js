@@ -8,7 +8,7 @@ addLayer("B", {
     }},
     color: "#ff00ff",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "baby talon links", // Name of prestige currency
+    resource: "Baby Talon Links", // Name of prestige currency
     baseResource: " T.M. points", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
@@ -24,5 +24,12 @@ addLayer("B", {
     hotkeys: [
         {key: "b", description: "B: Reset for Baby Talon Links", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
+    upgrades: {
+        11: {
+            title: "The Start",
+            description: "Double T.M. Point gain.",
+            cost: new Decimal(1)
+        }
+    }
 })
