@@ -15,7 +15,10 @@ addLayer("b", {
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
-        if (hasUpgrade('b', 14)) mult = mult.times(upgradeEffect('b', 14))
+        if (hasUpgrade('b', 14)) 
+            mult = mult.times(upgradeEffect('b', 14))
+        if (hasUpgrade('b', 21)) 
+            mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -54,6 +57,11 @@ addLayer("b", {
                 return player.points.add(1).pow(0.15)
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" } // Add formatting to the effect
+        },
+        21: {
+            title: "Baby Talon Links like to play",
+            description: "Double Baby Talon Link gain.",
+            cost: new Decimal(30)
         }
     }
 })
