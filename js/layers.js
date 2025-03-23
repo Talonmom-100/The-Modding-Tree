@@ -85,15 +85,15 @@ addLayer("b", {
             content: tabFormat [
                 "main-display",
                 ["prestige-button"],
-                "upgrades"
+                "milestones"
             ],
-            upgrades: {
-                11: {
-                    title: "Baby Talon Links can speak",
-                    description: "Double T.M. Point gain again.",
-                    cost: new Decimal(300)
+            milestones: {
+                0: {
+                    requirementDescription: "Get 500 Baby Talon Links.",
+                    effectDescription: "Double T.M. point gain again.",
+                    done() { return player.w.points.gte(500) }
+                }
                 }
             }
         }
-    }
 })
