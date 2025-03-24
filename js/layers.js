@@ -91,7 +91,7 @@ addLayer("b", {
                 0: {
                     requirementDescription: "Get 500 Baby Talon Links.",
                     effectDescription: "Double T.M. point gain again.",
-                    done() { return player.w.points.gte(500) }
+                    done() { return player.b.points.gte(500) }
                 }
                 }
             }
