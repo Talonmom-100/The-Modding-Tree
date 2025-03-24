@@ -79,7 +79,7 @@ milestones: {
         effectDescription: "Double T.M. point gain again.",
         done() { return player.b.points.gte(500) }
     }
-    },
+},
     tabFormat: {
        "Main Tab": {
            content: tabFormat [
