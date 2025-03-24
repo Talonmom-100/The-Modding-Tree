@@ -29,71 +29,71 @@ addLayer("b", {
         {key: "b", description: "B: Reset for Baby Talon Links", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    upgrades: {
+        11: {
+            title: "The Start",
+            description: "Double T.M. Point gain.",
+            cost: new Decimal(1)
+    },
+        12: {
+            title: "Baby Talon Links are Kirbys",
+            description: "Boost T.M. Points based on Baby Talon Links.",
+            cost: new Decimal(3),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.5)
+        },
+            effectDisplay() { 
+                return format(upgradeEffect(this.layer, this.id))+"x" 
+            } // Add formatting to the effect
+    },
+        13: {
+            title: "Baby Talon Links say E",
+            description: "1.5x T.M. Point gain.",
+            cost: new Decimal(7)
+    },
+        14: {
+            title: "Baby Talon Links are pets",
+            description: "Boost Baby Talon Link gain based on T.M. Points.",
+            cost: new Decimal(12),
+            effect() {
+                return player.points.add(1).pow(0.15)
+        },
+            effectDisplay() { 
+                return format(upgradeEffect(this.layer, this.id))+"x" 
+            } // Add formatting to the effect
+    },
+        21: {
+            title: "Baby Talon Links like to play",
+            description: "Double Baby Talon Link gain.",
+            cost: new Decimal(30)
+    },
+        22: {
+            title: "Baby Talon Links are smart",
+            description: "Unlock a subtab.",
+            cost: new Decimal(69)
+    }
+},
+milestones: {
+    0: {
+        requirementDescription: "Get 500 Baby Talon Links.",
+        effectDescription: "Double T.M. point gain again.",
+        done() { return player.b.points.gte(500) }
+    }
+    },
     tabFormat: {
        "Main Tab": {
            content: tabFormat [
                 "main-display",
                 ["prestige-button"],
                 "upgrades"
-        ],
-        upgrades: {
-            11: {
-                title: "The Start",
-                description: "Double T.M. Point gain.",
-                cost: new Decimal(1)
-        },
-            12: {
-                title: "Baby Talon Links are Kirbys",
-                description: "Boost T.M. Points based on Baby Talon Links.",
-                cost: new Decimal(3),
-                effect() {
-                    return player[this.layer].points.add(1).pow(0.5)
-            },
-                effectDisplay() { 
-                    return format(upgradeEffect(this.layer, this.id))+"x" 
-                } // Add formatting to the effect
-        },
-            13: {
-                title: "Baby Talon Links say E",
-                description: "1.5x T.M. Point gain.",
-                cost: new Decimal(7)
-        },
-            14: {
-                title: "Baby Talon Links are pets",
-                description: "Boost Baby Talon Link gain based on T.M. Points.",
-                cost: new Decimal(12),
-                effect() {
-                    return player.points.add(1).pow(0.15)
-            },
-                effectDisplay() { 
-                    return format(upgradeEffect(this.layer, this.id))+"x" 
-                } // Add formatting to the effect
-        },
-            21: {
-                title: "Baby Talon Links like to play",
-                description: "Double Baby Talon Link gain.",
-                cost: new Decimal(30)
-        },
-            22: {
-                title: "Baby Talon Links are smart",
-                description: "Unlock a subtab.",
-                cost: new Decimal(69)
-        }
-    }
+        ]
 },
         "Smartness": {
             content: tabFormat [
                 "main-display",
                 ["prestige-button"],
                 "milestones"
-            ],
-            milestones: {
-                0: {
-                    requirementDescription: "Get 500 Baby Talon Links.",
-                    effectDescription: "Double T.M. point gain again.",
-                    done() { return player.b.points.gte(500) }
-                }
-                }
+            ]
             }
         }
 })
