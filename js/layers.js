@@ -75,7 +75,6 @@ addLayer("b", {
 },
 milestones: {
     0: {
-        title: "Baby Talon Links are smart",
         requirementDescription: "Get 500 Baby Talon Links.",
         effectDescription: "Double T.M. point gain again.",
         done() { return player.b.points.gte(500) }
