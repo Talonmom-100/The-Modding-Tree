@@ -72,12 +72,5 @@ addLayer("b", {
             description: "Unlock a subtab.",
             cost: new Decimal(69)
     }
-},
-milestones: {
-    0: {
-        requirementDescription: "Get 500 Baby Talon Links.",
-        effectDescription: "Double T.M. point gain again.",
-        done() { return player.b.points.gte(500) }
-    }
 }
 })
