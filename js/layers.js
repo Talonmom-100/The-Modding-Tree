@@ -77,7 +77,9 @@ milestones: {
     1: {
         requirementDescription: "Baby Talon Links can read: 200 Baby Talon Links",
         effectDescription: "Double T.M. point gain again.",
-        done() { return player.b.points.gte(200) },
+        done() { 
+            return player.b.points.gte(200) 
+        },
         unlocked() { 
             if (!hasUpgrade('b', 22))
                 return false 
