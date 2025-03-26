@@ -75,9 +75,15 @@ addLayer("b", {
 },
 milestones: {
     1: {
-        requirementDescription: "Get 500 Baby Talon Links.",
+        requirementDescription: "Baby Talon Links can read: 500 Baby Talon Links",
         effectDescription: "Double T.M. point gain again.",
-        done() { return player.b.points.gte(500) }
+        done() { return player.b.points.gte(500) },
+        unlocked() { 
+            if (hasUpgrade('b', 22))
+                return true  
+            else
+                return false
+            }
     }
 }
 })
