@@ -78,6 +78,11 @@ addLayer("b", {
             title: "Baby Talon Links can have babies",
             description: "1.5x Baby Talon Link gain.",
             cost: new Decimal(350)
+    },
+        24: {
+            title: "Baby Talon Links love animals",
+            description: "1.5x T.M. point gain again.",
+            cost: new Decimal(875)
     }
 },
 milestones: {
