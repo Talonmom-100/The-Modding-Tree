@@ -19,6 +19,8 @@ addLayer("b", {
             mult = mult.times(upgradeEffect('b', 14))
         if (hasUpgrade('b', 21)) 
             mult = mult.times(2)
+        if (hasUpgrade('b', 23)) 
+            mult = mult.times(1.5)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -71,6 +73,11 @@ addLayer("b", {
             title: "Baby Talon Links are smart",
             description: "Unlock a milestone.",
             cost: new Decimal(69)
+    },
+        23: {
+            title: "Baby Talon Links can have babies",
+            description: "1.5x Baby Talon Link gain.",
+            cost: new Decimal(350)
     }
 },
 milestones: {
