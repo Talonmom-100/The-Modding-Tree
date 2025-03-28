@@ -21,6 +21,8 @@ addLayer("b", {
             mult = mult.times(2)
         if (hasUpgrade('b', 23)) 
             mult = mult.times(1.5)
+        if (hasMilestone('b', 2)) 
+            mult = mult.times(2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -86,9 +88,14 @@ addLayer("b", {
     },
         31: {
             title: "Baby Talon Links can be different types",
-            description: "idk",
+            description: "Get 1/2 to unlocking BTL Types.",
             cost: new Decimal(1475)
-        }
+    },
+        32: {
+            title: "Baby Talon Links are smart 2",
+            description: "Unlock another milestone.",
+            cost: new Decimal(2025)
+    }
 },
 milestones: {
     1: {
@@ -99,6 +106,17 @@ milestones: {
         },
         unlocked() { 
             if (!hasUpgrade('b', 22))
+                return false 
+        }
+    },
+    2: {
+        requirementDescription: "Baby Talon Links can speak: 3020 Baby Talon Links",
+        effectDescription: "Double Baby Talon Link gain again.",
+        done() { 
+            return player.b.points.gte(3020) 
+        },
+        unlocked() { 
+            if (!hasUpgrade('b', 32))
                 return false 
         }
     }
