@@ -95,6 +95,11 @@ addLayer("b", {
             title: "Baby Talon Links are smart 2",
             description: "Unlock another milestone.",
             cost: new Decimal(2025)
+    },
+        33: {
+            title: "Baby Talon Links can transform...",
+            description: "dud",
+            cost: new Decimal(4550)
     }
 },
 milestones: {
