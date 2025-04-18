@@ -98,8 +98,13 @@ addLayer("b", {
     },
         33: {
             title: "Baby Talon Links can transform...",
-            description: "dud",
+            description: "*effect might be implemented in a later update*",
             cost: new Decimal(4550)
+    },
+        34: {
+            title: "...into Talon Links!",
+            description: "Unlock a new layer.",
+            cost: new Decimal(6000)
     }
 },
 milestones: {
