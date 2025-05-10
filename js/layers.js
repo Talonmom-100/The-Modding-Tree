@@ -165,6 +165,10 @@ addLayer("t", {
     layerShown() { return true },          // Returns a bool for if this layer's node should be visible in the tree.
 
     upgrades: {
-        
+        11: {
+            title: "Talon Links are big pixelated Marios",
+            description: "2.5x point gain.",
+            cost: new Decimal(1)
+        }
     },
 })
