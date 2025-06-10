@@ -169,6 +169,17 @@ addLayer("t", {
             title: "Talon Links are big pixelated Marios",
             description: "2.5x point gain.",
             cost: new Decimal(1)
+        },
+        12: {
+            title: "Talon Links speak English",
+            description: "Boost T.M. Point gain based on Talon Links.",
+            cost: new Decimal(4),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.20)
+        },
+            effectDisplay() { 
+                return format(upgradeEffect(this.layer, this.id))+"x" 
+            }
         }
     },
 })
